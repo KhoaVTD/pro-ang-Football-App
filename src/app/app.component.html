@@ -1,0 +1,5 @@
+<app-header></app-header>
+
+<main [@FadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>

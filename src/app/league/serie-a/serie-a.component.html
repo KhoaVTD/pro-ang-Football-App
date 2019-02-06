@@ -1,0 +1,115 @@
+<div>
+
+  <br>
+  <div class="container">
+
+    <!-- Content -->
+    <div fxLayout="row" fxLayoutAlign="center center" class="content">
+
+      <!-- Card -->
+      <mat-card class="card">
+
+        <!-- Card title -->
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3>Serie A</h3>
+        </mat-card-title>
+        <!-- Card title -->
+
+        <!-- Card content -->
+        <mat-card-content>
+          <div class="example-container mat-elevation-z8">
+
+            <!-- Table -->
+            <mat-table #table [dataSource]="dataSource">
+
+              <!-- Position -->
+              <ng-container matColumnDef="position">
+                <mat-header-cell *matHeaderCellDef>Position</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_position }}</mat-cell>
+              </ng-container>
+              <!-- Position -->
+
+              <!-- Team name -->
+              <ng-container matColumnDef="team_name">
+                <mat-header-cell *matHeaderCellDef>Football club</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.team_name }}</mat-cell>
+              </ng-container>
+              <!-- Team name -->
+
+              <!-- Match played -->
+              <ng-container matColumnDef="match_played">
+                <mat-header-cell *matHeaderCellDef>MP</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_payed }}</mat-cell>
+              </ng-container>
+              <!-- Match played -->
+
+              <!-- Won -->
+              <ng-container matColumnDef="won">
+                <mat-header-cell *matHeaderCellDef>W</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_W }}</mat-cell>
+              </ng-container>
+              <!-- Won -->
+
+              <!-- Drawn -->
+              <ng-container matColumnDef="drawn">
+                <mat-header-cell *matHeaderCellDef>D</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_D }}</mat-cell>
+              </ng-container>
+              <!-- Drawn -->
+
+              <!-- Lost -->
+              <ng-container matColumnDef="lost">
+                <mat-header-cell *matHeaderCellDef>L</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_L }}</mat-cell>
+              </ng-container>
+              <!-- Lost -->
+
+              <!-- Goal for -->
+              <ng-container matColumnDef="goal_for">
+                <mat-header-cell *matHeaderCellDef>GF</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_GF }}</mat-cell>
+              </ng-container>
+              <!-- Goal for -->
+
+              <!-- Goal against -->
+              <ng-container matColumnDef="goal_against">
+                <mat-header-cell *matHeaderCellDef>GA</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_GA }}</mat-cell>
+              </ng-container>
+              <!-- Goal against -->
+
+              <!-- Goal difference -->
+              <ng-container matColumnDef="goal_difference">
+                <mat-header-cell *matHeaderCellDef>GD</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  {{ row.overall_league_GF - row.overall_league_GA }}
+                </mat-cell>
+              </ng-container>
+              <!-- Goal difference -->
+
+              <!-- Points -->
+              <ng-container matColumnDef="points">
+                <mat-header-cell *matHeaderCellDef>PTS</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.overall_league_PTS }}</mat-cell>
+              </ng-container>
+              <!-- Points -->
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+            </mat-table>
+            <!-- Table -->
+
+          </div>
+        </mat-card-content>
+        <!-- Card content -->
+
+      </mat-card>
+      <!-- Card -->
+
+    </div>
+    <!-- Content -->
+
+  </div>
+
+</div>

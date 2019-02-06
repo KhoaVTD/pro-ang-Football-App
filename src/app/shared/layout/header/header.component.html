@@ -1,0 +1,161 @@
+<!-- Sidenav container -->
+<mat-sidenav-container>
+
+  <!-- Header mobile layout platform -->
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+
+      <!-- Home route-->
+      <a mat-list-item [routerLink]="['/']" routerLinkActive="menu-item-active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon class="icon">home</mat-icon>
+        <span class="label">Home</span>
+      </a>
+      <!-- Home route-->
+
+      <!-- Standings -->
+      <a mat-list-item>
+        <mat-icon class="menu">table_chart</mat-icon>
+        <span mat-button [matMenuTriggerFor]="standings" class="label" style="margin-left: 7px;">
+          Standings
+        </span>
+
+        <mat-menu #standings="matMenu">
+
+          <!-- Premier League route -->
+          <a mat-menu-item [routerLink]="['/premier-league']" routerLinkActive="standing-active" >
+            Premier League
+          </a>
+          <!-- Premier League route -->
+
+          <!-- La Liga route -->
+          <a mat-menu-item [routerLink]="['/la-liga']" routerLinkActive="standing-active">
+            La Liga
+          </a>
+          <!-- La Liga route -->
+
+          <!-- Bundesliga route -->
+          <a mat-menu-item [routerLink]="['/bundesliga']" routerLinkActive="standing-active">
+            Bundesliga
+          </a>
+          <!-- Bundesliga route -->
+
+          <!-- Serie A route -->
+          <a mat-menu-item [routerLink]="['/serie-a']" routerLinkActive="standing-active">
+            Serie A
+          </a>
+          <!-- Serie A route -->
+
+          <!-- Ligue 1 route -->
+          <a mat-menu-item [routerLink]="['/ligue-1']" routerLinkActive="standing-active">
+            Ligue 1
+          </a>
+          <!-- Ligue 1 route -->
+
+        </mat-menu>
+
+      </a>
+      <!-- Standings -->
+
+      <!-- About route-->
+      <a mat-list-item [routerLink]="['/about']" routerLinkActive="menu-item-active">
+        <mat-icon class="icon">info</mat-icon>
+        <span class="label">About</span>
+      </a>
+      <!-- About route-->
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- Header mobile layout platform -->
+
+  <!-- Header desktop/laptop layout platform -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+      <!-- Sidenav toggle -->
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon class="icon">menu</mat-icon>
+        </button>
+      </div>
+      <!-- Sidenav toggle -->
+
+      <div>
+        <a>League Standings</a>
+      </div>
+
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+
+          <!-- Home route-->
+          <li>
+            <a [routerLink]="['/']" routerLinkActive="menu-item-active"
+              [routerLinkActiveOptions]="{ exact: true }">
+              <mat-icon class="icon">home</mat-icon>
+              <span class="label" style="margin-left: 5px;">Home</span>
+            </a>
+          </li>
+          <!-- Home route-->
+
+          <!-- Standings -->
+          <li>
+            <mat-icon class="icon">table_chart</mat-icon>
+            <span mat-button [matMenuTriggerFor]="standings" class="label" style="margin-left: 5px;">
+              Standings
+            </span>
+
+            <mat-menu #standings="matMenu">
+
+              <!-- Premier League route -->
+              <a mat-menu-item [routerLink]="['/premier-league']" routerLinkActive="standing-active">
+                Premier League
+              </a>
+              <!-- Premier League route -->
+
+              <!-- La Liga route -->
+              <a mat-menu-item [routerLink]="['/la-liga']" routerLinkActive="standing-active">
+                La Liga
+              </a>
+              <!-- La Liga route -->
+
+              <!-- Bundesliga route -->
+              <a mat-menu-item [routerLink]="['/bundesliga']" routerLinkActive="standing-active">
+                Bundesliga
+              </a>
+              <!-- Bundesliga route -->
+
+              <!-- Serie A route -->
+              <a mat-menu-item [routerLink]="['/serie-a']" routerLinkActive="standing-active">
+                Serie A
+              </a>
+              <!-- Serie A route -->
+
+              <!-- Ligue 1 route -->
+              <a mat-menu-item [routerLink]="['/ligue-1']" routerLinkActive="standing-active">
+                Ligue 1
+              </a>
+              <!-- Ligue 1 route -->
+
+            </mat-menu>
+
+          </li>
+          <!-- Standings -->
+
+          <!-- About route-->
+          <li>
+            <a [routerLink]="['/about']" routerLinkActive="menu-item-active">
+              <mat-icon class="icon">info</mat-icon>
+              <span class="label" style="margin-left: 5px;">About</span>
+            </a>
+          </li>
+          <!-- About route-->
+
+        </ul>
+      </div>
+
+    </mat-toolbar>
+  </mat-sidenav-content>
+  <!-- Header desktop/laptop layout platform -->
+
+</mat-sidenav-container>
+<!-- Sidenav container -->
